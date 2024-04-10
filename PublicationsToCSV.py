@@ -26,6 +26,5 @@ with open(file_publications, 'r', encoding='utf-8') as file:
         publication_title = publication_title.strip()
         publication_content = PublicationContent(publication_title, scraper)
         publication_contents.append(publication_content.toDict())
-        print(publication_contents)
 
 writeArrayOfDictsToCSVFile(publication_contents, file_output)
