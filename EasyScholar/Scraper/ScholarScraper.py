@@ -16,6 +16,7 @@ class ScholarScraper:
 
     def getURLContent(self, url) -> bs4.BeautifulSoup:
         raw = self.webscraper.getURLRAWContent(url)
+        print(raw)
         soup = BeautifulSoup(raw, "html.parser")
         return soup
 
