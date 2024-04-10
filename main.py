@@ -1,4 +1,4 @@
-from EasyScholar.PublicationContent import PublicationContent
+from EasyScholar.Content.PublicationContent import PublicationContent
 
 content = PublicationContent('Discriminative unsupervised feature learning with convolutional neural networks')
 

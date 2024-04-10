@@ -1,16 +1,14 @@
-import bs4
-import requests
-from bs4 import BeautifulSoup
-import urllib.parse
-
-from EasyScholar.ScholarScraper import getPublicationContent
+from EasyScholar.Scraper.ScholarScraper import ScholarScraper
+from EasyScholar.Scraper.WebScraper.WebScraperRequests import WebScraperRequests
 
 
 class PublicationContent:
 
-    def __init__(self, title):
+    def __init__(self, title, scholar_scraper=None):
+        if scholar_scraper is None:
+            self.scholar_scraper = ScholarScraper(WebScraperRequests())
         if type(title) is str:
-            self.content = getPublicationContent(title)
+            self.content = self.scholar_scraper.getPublicationContent(title)
             self.title = title
         else:
             raise TypeError("PublicationContent should be provided with string, " + str(title) + "provided")
