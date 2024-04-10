@@ -1,9 +1,12 @@
+
 # EasyScholar - A Google Scholar Scraper
 
-EasyScholar is a simple library to scrape Google Scholar using publication titles.
-NOTE: This library is only for small scraping (e.g. 20 papers).
+`EasyScholar` is a simple library to scrape Google Scholar using publication titles.
 
-Building on EasySchoolar I created PublicationsToCSV.
-This tool was created while writing my master thesis. I had several related work papers I needed to compare. 
-I only had a list of publications, but needed a a .csv file enriched with information (e.g. publication date).
-Given a list of publication titles and turns them into a CSV file containg more information (via BeautifulSoup).
+**NOTE: This library is only for small scraping (e.g. 20 papers)**
+
+Building on EasySchoolar I created `PublicationsToCSV`.
+Given a list of publication titles it turns them into a CSV file containg more information (via BeautifulSoup).
+
+This tool was created while writing my master thesis. I had several related work papers I needed to compare. I only had a list of publications, but needed a a .csv file enriched with information (e.g. publication date).
+
