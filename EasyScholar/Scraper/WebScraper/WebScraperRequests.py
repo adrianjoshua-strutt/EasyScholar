@@ -1,9 +1,7 @@
 # This Scraper uses the standard requests class
 
 import requests
-
 from EasyScholar.Scraper.WebScraper.WebScraper import WebScraper
-
 
 class WebScraperRequests(WebScraper):
 

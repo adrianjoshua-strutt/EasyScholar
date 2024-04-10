@@ -5,8 +5,9 @@ from EasyScholar.Scraper.WebScraper.WebScraperRequests import WebScraperRequests
 class PublicationContent:
 
     def __init__(self, title, scholar_scraper=None):
-        if scholar_scraper is None:
-            self.scholar_scraper = ScholarScraper(WebScraperRequests())
+        self.scholar_scraper = scholar_scraper
+        if self.scholar_scraper is None:
+            self.scholar_scraper = ScholarScraper()
         if type(title) is str:
             self.content = self.scholar_scraper.getPublicationContent(title)
             self.title = title

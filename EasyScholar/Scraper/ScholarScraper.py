@@ -2,10 +2,14 @@ import bs4
 from bs4 import BeautifulSoup
 import urllib.parse
 
+from EasyScholar.Scraper.WebScraper.WebScraperSelenium import WebScraperSelenium
+
 
 class ScholarScraper:
 
-    def __init__(self, webscraper):
+    def __init__(self, webscraper=None):
+        if webscraper is None:
+            webscraper = WebScraperSelenium()
         self.webscraper = webscraper
 
     @staticmethod
