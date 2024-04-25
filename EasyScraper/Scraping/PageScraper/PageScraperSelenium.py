@@ -1,14 +1,12 @@
 # This Scraper uses the Selenium
-
-import time
 from selenium import webdriver
 from selenium.webdriver.edge.options import Options
-from EasyScholar.Scraper.WebScraper.WebScraper import WebScraper
+from EasyScraper.Scraping.PageScraper.PageScraper import PageScraper
 
 
-class WebScraperSelenium(WebScraper):
+class PageScraperSelenium(PageScraper):
 
-    def getURLRAWContent(self, url) -> str:
+    def getContent(self, url) -> str:
         options = Options()
         options.add_argument("--headless")
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
