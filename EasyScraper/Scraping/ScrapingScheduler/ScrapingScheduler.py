@@ -5,11 +5,10 @@ from EasyScraper.Scraping.PageScraper.PageScraperSelenium import PageScraperSele
 
 class ScrapingScheduler(ABC):
 
-    def __init__(self, parser_list, webscraper=None):
+    def __init__(self, webscraper=None):
         if webscraper is None:
             webscraper = PageScraperSelenium()
         self.webscraper = webscraper
-        self.parserList = parser_list
 
     def processParser(self, parser):
         url = parser.getURL()
@@ -19,5 +18,6 @@ class ScrapingScheduler(ABC):
         parser.content = content
 
     @abstractmethod
-    def scrape(self):
+    def scrape(self, parser):
         pass
+

@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 from EasyScraper.Parsing.ContentMiddleware.ContentMiddleware import ContentMiddleware
 
 
-class PageParser(ABC):
+class ContentParser(ABC):
 
     def __init__(self, query, content=None):
         self.query = query
@@ -39,10 +39,10 @@ class PageParser(ABC):
 
     def toDict(self) -> dict:
         if self.content is None:
-            warnings.warn("toDict on PageParser with empty content")
+            warnings.warn("toDict on ContentParser with empty content")
             return {}
         elif self.isContentAvailable() is False:
-            warnings.warn("toDict on PageParser with isAvailable FALSE")
+            warnings.warn("toDict on ContentParser with isAvailable FALSE")
             return {}
         methods = [method for method in dir(self) if callable(getattr(self, method)) and method.startswith('parse')]
         return {method[5:]: getattr(self, method)() for method in methods}

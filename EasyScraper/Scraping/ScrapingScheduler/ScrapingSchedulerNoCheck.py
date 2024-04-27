@@ -2,10 +2,7 @@
 from EasyScraper.Scraping.ScrapingScheduler.ScrapingScheduler import ScrapingScheduler
 
 
-class ScrapingSchedulerStandard(ScrapingScheduler):
+class ScrapingSchedulerNoCheck(ScrapingScheduler):
 
-    def scrape(self):
-        for parser in self.parserList:
-            self.processParser(parser)
-            print(parser.parsePublicationUrl())
-            print(parser)
+    def scrape(self, parser):
+        self.processParser(parser)

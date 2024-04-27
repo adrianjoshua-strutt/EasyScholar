@@ -1,5 +1,5 @@
 # A middleware to preprocess content.
-# This will be returned from a PageParser implementation. Giving it the right format
+# This will be returned from a ContentParser implementation. Giving it the right format
 from abc import ABC, abstractmethod
 
 
